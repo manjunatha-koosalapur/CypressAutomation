@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules\\.bin\\cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "recordTestDashboard": "npm run test -- --record --key 5d9c9fc0-72f1-4e1a-a415-7854019dda57"
   },
   "keywords": [],
   "author": "Manjunatha",
