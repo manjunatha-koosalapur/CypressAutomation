@@ -8,6 +8,12 @@ it('login to orangeHRM', function () {
     cy.get('#txtUsername').click().type('Admin')
     cy.get('#txtPassword').click().type('admin123')
     cy.get('#btnLogin').click()
+    
+
+// it('Verify all Menu names', function () {
+//     cy.get('#mainMenuFirstLevelUnorderedList').contains('My Info')
+//     cy.wait(2000)
+    
 
    //search user  
     cy.get('#menu_admin_viewAdminModule > b').click()
@@ -18,12 +24,25 @@ it('login to orangeHRM', function () {
     cy.wait(2000)
     })
 
+it('Verify user status-Enabled/Disabled', function () {
+    cy.get('.odd > :nth-child(5)').contains('Enabled')
+    cy.wait(2000)
+    })    
+
+// it('add user', function () {
+//     cy.get('#btnAdd').click()
+//     cy.get('#systemUser_employeeName_empName').click().type('Orange User')
+//     cy.get('#systemUser_userName').click().type('orangeUser')
+//     cy.get('#systemUser_password').click().type('password1234')
+//     cy.get('#systemUser_confirmPassword').click().type('password1234')
+//     cy.get('#btnSave').click()
+//     })
+
 
 it('logout from orangeHRM', function () {
    cy.get('#welcome').click()
    cy.get('#welcome-menu > :nth-child(1) > :nth-child(3) > a').click()
     })
-
 
 it('Verify title of Web page', function () {
     cy.visit('https://opensource-demo.orangehrmlive.com/index.php/auth/login')
