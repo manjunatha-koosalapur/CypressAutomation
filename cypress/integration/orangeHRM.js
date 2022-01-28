@@ -16,8 +16,8 @@ it('login to orangeHRM', function () {
     //cy.wait(2000)
     cy.get('#searchBtn').click()
     })
+    cy.wait(2000)
 
-    
 it('logout from orangeHRM', function () {
    cy.get('#welcome').click()
    cy.get('#welcome-menu > :nth-child(1) > :nth-child(3) > a').click()
