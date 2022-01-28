@@ -15,8 +15,9 @@ it('login to orangeHRM', function () {
     cy.get('#searchSystemUser_userName').click().type('admin')
     //cy.wait(2000)
     cy.get('#searchBtn').click()
-    })
     cy.wait(2000)
+    })
+
 
 it('logout from orangeHRM', function () {
    cy.get('#welcome').click()
