@@ -1,4 +1,5 @@
-/// ＜reference types="cypress" /＞
+/// ＜reference types="cypress" /＞ 
+//for auto suggestion or intelligent code completion
 
 describe('OrangeHRM Test Suite', function()
 {
@@ -25,9 +26,12 @@ it('login to orangeHRM', function () {
     })
 
 it('Verify user status-Enabled/Disabled', function () {
-    cy.get('.odd > :nth-child(5)').contains('Enabled')
+    cy.get('.odd > :nth-child(2)').should('have.text','Admin')
+    cy.get('.odd > :nth-child(5)').should('have.text','Enabled')
     cy.wait(2000)
     })    
+
+ 
 
 // it('add user', function () {
 //     cy.get('#btnAdd').click()
