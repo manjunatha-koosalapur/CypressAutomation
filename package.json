@@ -9,6 +9,7 @@
     "chromeTest": "npm run test -- --browser chrome",
     "recordTestDashboard": "npm run test -- --record --key 5d9c9fc0-72f1-4e1a-a415-7854019dda57"
   },
+  
   "keywords": [],
   "author": "Manjunatha",
   "license": "ISC",
