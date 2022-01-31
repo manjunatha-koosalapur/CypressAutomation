@@ -6,11 +6,12 @@ describe('OrangeHRM Test Suite', function()
 
 it('login to orangeHRM', function () {
     cy.visit('https://opensource-demo.orangehrmlive.com/index.php/auth/login')
-    cy.get('#txtUsername').click().type('Admin')
-    cy.get('#txtPassword').click().type('admin123')
-    cy.get('#btnLogin').click()
+    cy.fixture('example').then((user) =>{
+    cy.get('#txtUsername').click().type(user.username1)
+    cy.get('#txtPassword').click().type(user.password1)
+    cy.get('#btnLogin').contains('LOGIN').should('be.enabled').click()
+    })
     
-
 // it('Verify all Menu names', function () {
 //     cy.get('#mainMenuFirstLevelUnorderedList').contains('My Info')
 //     cy.wait(2000)
@@ -31,7 +32,6 @@ it('Verify user status-Enabled/Disabled', function () {
     cy.wait(2000)
     })    
 
- 
 
 // it('add user', function () {
 //     cy.get('#btnAdd').click()
@@ -48,6 +48,7 @@ it('logout from orangeHRM', function () {
    cy.get('#welcome-menu > :nth-child(1) > :nth-child(3) > a').click()
     })
 
+    
 it('Verify title of Web page', function () {
     cy.visit('https://opensource-demo.orangehrmlive.com/index.php/auth/login')
     cy.title() .should('eq' , 'OrangeHRM')
