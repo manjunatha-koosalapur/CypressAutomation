@@ -33,14 +33,15 @@ it('Verify user status-Enabled/Disabled', function () {
     })    
 
 
-// it('add user', function () {
-//     cy.get('#btnAdd').click()
-//     cy.get('#systemUser_employeeName_empName').click().type('Orange User')
-//     cy.get('#systemUser_userName').click().type('orangeUser')
-//     cy.get('#systemUser_password').click().type('password1234')
-//     cy.get('#systemUser_confirmPassword').click().type('password1234')
-//     cy.get('#btnSave').click()
-//     })
+it.skip('add user', function () {
+    cy.get('#btnAdd').click()
+    cy.get('#systemUser_employeeName_empName').click().type('Orange User')
+    cy.get('#systemUser_userName').click().type('orangeUser')
+    cy.get('#systemUser_password').click().type('password1234')
+    cy.get('#systemUser_confirmPassword').click().type('password1234')
+    cy.get('#btnSave').click()
+
+    })
 
 
 it('logout from orangeHRM', function () {
@@ -48,7 +49,7 @@ it('logout from orangeHRM', function () {
    cy.get('#welcome-menu > :nth-child(1) > :nth-child(3) > a').click()
     })
 
-    
+
 it('Verify title of Web page', function () {
     cy.visit('https://opensource-demo.orangehrmlive.com/index.php/auth/login')
     cy.title() .should('eq' , 'OrangeHRM')
